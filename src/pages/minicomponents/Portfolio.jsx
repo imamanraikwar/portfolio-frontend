@@ -10,7 +10,7 @@ const Portfolio = () => {
   useEffect(() => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
-        "http://localhost:8000/api/v1/project/getallproject",
+        "https://portfolio-backend-gyzk.onrender.com/api/v1/project/getallproject",
         { withCredentials: true }
       );
       setProjects(data.data);

@@ -19,9 +19,12 @@ const ProjectView = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`http://localhost:8000/api/v1/project/getoneproject/${id}`, {
-          withCredentials: true,
-        })
+        .get(
+          `https://portfolio-backend-gyzk.onrender.com/api/v1/project/getoneproject/${id}`,
+          {
+            withCredentials: true,
+          }
+        )
         .then((res) => {
           console.log(
             "Project Details---------",
