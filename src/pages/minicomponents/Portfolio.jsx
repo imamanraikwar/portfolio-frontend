@@ -10,7 +10,7 @@ const Portfolio = () => {
   useEffect(() => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
-        "https://portfolio-backend-gyzk.onrender.com/api/v1/project/getallproject",
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/project/getallproject`,
         { withCredentials: true }
       );
       setProjects(data.data);
@@ -20,7 +20,13 @@ const Portfolio = () => {
 
   return (
     <div>
-      <div className="relative mb-12">
+      <h1
+        className="text-tubeLight-effect text-[2rem] sm:text-[2.75rem] md:text-[3rem] 
+      lg:text-[3.8rem] tracking-[15px] dancing_text mx-auto w-fit"
+      >
+        Personal Projects
+      </h1>
+      {/* <div className="relative mb-12">
         <h1
           className="hidden sm:flex gap-4 items-center text-[2rem] sm:text-[2.75rem] md:text-[3rem] 
           lg:text-[3.8rem] leading-[56px] md:leading-[67px] lg:leading-[90px] tracking-[15px] 
@@ -29,10 +35,8 @@ const Portfolio = () => {
             background: "hsl(222.2 84% 4.9%)",
           }}
         >
-          MY{" "}
-          <span className="text-tubeLight-effect font-extrabold">
-            PORTFOLIO
-          </span>
+          PERONAL{" "}
+          <span className="text-tubeLight-effect font-extrabold">PROJECTS</span>
         </h1>
         <h1
           className="flex sm:hidden gap-4 items-center text-[2rem] sm:text-[2.75rem] 
@@ -42,11 +46,12 @@ const Portfolio = () => {
             background: "hsl(222.2 84% 4.9%)",
           }}
         >
-          MY <span className="text-tubeLight-effect font-extrabold">WORK</span>
+          PERONAL{" "}
+          <span className="text-tubeLight-effect font-extrabold">PROJECTS</span>
         </h1>
         <span className="absolute w-full h-1 top-7 sm:top-7 md:top-8 lg:top-11 z-[-1] bg-slate-200"></span>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
         {viewAll
           ? projects &&
             projects.map((element) => {
@@ -55,6 +60,7 @@ const Portfolio = () => {
                   <img
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
+                    className="w-full h-64 object-cover overflow-hidden "
                   />
                 </Link>
               );

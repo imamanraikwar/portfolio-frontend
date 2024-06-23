@@ -20,7 +20,9 @@ const ProjectView = () => {
     const getProject = async () => {
       await axios
         .get(
-          `https://portfolio-backend-gyzk.onrender.com/api/v1/project/getoneproject/${id}`,
+          `${
+            import.meta.env.VITE_SERVER_URL
+          }/api/v1/project/getoneproject/${id}`,
           {
             withCredentials: true,
           }

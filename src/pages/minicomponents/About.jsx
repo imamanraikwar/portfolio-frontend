@@ -6,7 +6,7 @@ const About = () => {
   useEffect(() => {
     const getMyProfile = async () => {
       const { data } = await axios.get(
-        "https://portfolio-backend-gyzk.onrender.com/api/v1/users/portfolio/me",
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/users/portfolio/me`,
         { withCredentials: true }
       );
       setUser1(data.data);
@@ -37,16 +37,17 @@ const About = () => {
         {/* <div className="grid md:grid-cols-2 my-8 sm:my-20 gap-14">
           <div className="flex justify-center items-center">
             <img
-              src={user1.avatar.url}
+              src={user1.avatar?.url}
               alt="avatar"
               className="bg-white p-2 sm:p-4  h-[240px] sm:h-[340px] md:h-[350px] lg:h-[450px]"
             />
-          </div> */}
-        <div className="flex justify-center flex-col tracking-[1px] text-xl gap-5">
-          <p>{user1.introduction}</p>
-        </div>
-        {/* </div> */}
-        <p className="tracking-[1px] text-xl">
+          </div>
+          <div className="flex justify-center flex-col tracking-[1px] text-xl gap-5">
+            <p>{user1.introduction}</p>
+          </div>
+        </div> */}
+        <p className="tracking-[1px] text-xl mt-5">
+          {user1.introduction}
           My dedication and perseverance in timely delivery of work are integral
           to me. I maintain the courage to face any challenges for extended
           periods.

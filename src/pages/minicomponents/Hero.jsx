@@ -15,11 +15,14 @@ import axios from "axios";
 
 const Hero = () => {
   const [user, setUser] = useState({});
+
   useEffect(() => {
     const getMyProfile = async () => {
       const { data } = await axios.get(
-        "https://portfolio-backend-gyzk.onrender.com/api/v1/users/portfolio/me",
-        { withCredentials: true }
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/users/portfolio/me`,
+        {
+          withCredentials: true,
+        }
       );
       setUser(data.data);
     };
@@ -43,7 +46,7 @@ const Hero = () => {
       sm:text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] tracking-[15px]"
       >
         <Typewriter
-          words={["FULLSTACK DEVELOPER", "YOUTUBER", "FREELANCER"]}
+          words={["FULLSTACK DEVELOPER", "FREELANCER"]}
           loop={50}
           cursor
           typeSpeed={70}

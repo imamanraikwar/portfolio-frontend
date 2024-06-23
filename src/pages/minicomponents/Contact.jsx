@@ -15,7 +15,7 @@ const Contact = () => {
     setLoading(true);
     await axios
       .post(
-        "https://portfolio-backend-gyzk.onrender.com/api/v1/message/send-message",
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/message/send-message`,
         { senderName, subject, message },
         {
           withCredentials: true,

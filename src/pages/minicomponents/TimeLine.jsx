@@ -6,7 +6,7 @@ const Timeline = () => {
   useEffect(() => {
     const getMyTimeline = async () => {
       const { data } = await axios.get(
-        "https://portfolio-backend-gyzk.onrender.com/api/v1/timeline/getall-timeline",
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/timeline/getall-timeline`,
         { withCredentials: true }
       );
       setTimeline(data.data);
@@ -16,7 +16,7 @@ const Timeline = () => {
   return (
     <div>
       <h1 className="overflow-x-hidden text-[2rem] sm:text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] mb-4 font-extrabold">
-        Timeline
+        WORK EXEPERIENCE
       </h1>
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
         {timeline &&
