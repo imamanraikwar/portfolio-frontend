@@ -58,30 +58,34 @@ const Hero = () => {
         className="w-fit px-5 py-2 bg-slate-50 rounded-[20px] flex gap-5 
       items-center mt-4 md:mt-8 lg:mt-10"
       >
-        <Link to={user.linkedinUrl} target="_blank">
+        <a href={user.linkedinUrl} target="_blank" rel="noopener noreferrer">
           <Linkedin className="text-sky-500 w-7 h-7" />
-        </Link>
-        <Link to={user.twitterURL} target="_blank">
+        </a>
+        <a href={user.twitterURL} target="_blank" rel="noopener noreferrer">
           <Twitter className="text-blue-800 w-7 h-7" />
-        </Link>
+        </a>
       </div>
       <div className="mt-4 md:mt-8 lg:mt-10  flex gap-3">
-        <Link to={user.githubUrl} target="_blank">
+        <a href={user.githubUrl} target="_blank" rel="noopener noreferrer">
           <Button className="rounded-[30px] flex items-center gap-2 flex-row">
             <span>
               <Github />
             </span>
             <span>Github</span>
           </Button>
-        </Link>
-        <Link to={user.resume && user.resume.url} target="_blank">
+        </a>
+        <a
+          href={user.resume && user.resume.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button className="rounded-[30px] flex items-center gap-2 flex-row">
             <span>
               <ExternalLink />
             </span>
             <span>Resume </span>
           </Button>
-        </Link>
+        </a>
       </div>
       <p className="mt-8 text-xl tracking-[2px]">{user.summery}</p>
       <hr className="my-8 md::my-10 " />
