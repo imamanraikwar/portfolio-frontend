@@ -19,7 +19,7 @@ const Hero = () => {
   useEffect(() => {
     const getMyProfile = async () => {
       const { data } = await axios.get(
-        `https://portfolio-backend-gyzk.onrender.com/api/v1/users/portfolio/me`,
+        `https://portfolio-backend-uc19.onrender.com/api/v1/users/portfolio/me`,
         {
           withCredentials: true,
         }

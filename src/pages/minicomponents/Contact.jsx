@@ -15,7 +15,7 @@ const Contact = () => {
     setLoading(true);
     await axios
       .post(
-        `https://portfolio-backend-gyzk.onrender.com/api/v1/message/send-message`,
+        `https://portfolio-backend-uc19.onrender.com/api/v1/message/send-message`,
         { senderName, subject, message },
         {
           withCredentials: true,

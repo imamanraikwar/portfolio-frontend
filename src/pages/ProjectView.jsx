@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -20,7 +20,7 @@ const ProjectView = () => {
     const getProject = async () => {
       await axios
         .get(
-          `https://portfolio-backend-gyzk.onrender.com/api/v1/project/getoneproject/${id}`,
+          `https://portfolio-backend-uc19.onrender.com/api/v1/project/getoneproject/${id}`,
           {
             withCredentials: true,
           }
